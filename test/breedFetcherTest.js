@@ -15,4 +15,12 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+  it('returns "breed not found" when not valid breed, via callback', (done) => {
+    fetchBreedDescription('asdfasdf', (err, desc) => {
+      assert.equal(err, null);
+      const expectedDesc = 'breed not found';
+      assert.equal(expectedDesc, desc);
+      done();
+    });
+  });
 });

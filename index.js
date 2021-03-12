@@ -1,6 +1,6 @@
 const { fetchBreedDescription } = require('./breedFetcher');
 
-const breedName = process.argv.slice(2).join('+');
+let breedName = process.argv.slice(2).join('+');
 
 fetchBreedDescription(breedName, (error, desc) => {
   if (error) {
